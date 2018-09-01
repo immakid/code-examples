@@ -1,0 +1,405 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="/assets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['timeline']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+
+            var container = document.getElementById('timeline');
+            var chart = new google.visualization.Timeline(container);
+            var dataTable = new google.visualization.DataTable();
+
+
+            dataTable.addColumn({ type: 'string', id: 'Periods' });
+            dataTable.addColumn({ type: 'date', id: 'Start' });
+            dataTable.addColumn({ type: 'date', id: 'End' });
+
+
+            {% if list|length > 0 %}
+
+                dataTable.addRows([
+                    {% for item in list %}
+
+                        [
+                            "#{{ item.id }} {{ item.price }}$ {{ item.active_days }} {{ item.start_date_full }} - {{ item.end_date_full }}",
+                            new Date({{ item.start_date.Y }}, {{ item.start_date.m }}, {{ item.start_date.d }}, {{ item.start_date.H }}, {{ item.start_date.i }}, {{ item.start_date.s }}),
+                            new Date({{ item.end_date.Y }}, {{ item.end_date.m }}, {{ item.end_date.d }}, {{ item.end_date.H }}, {{ item.end_date.i }}, {{ item.end_date.s }}),
+                        ],
+
+                    {% endfor %}
+                ]);
+
+                chart.draw(dataTable);
+
+            {% endif %}
+
+        }
+    </script>
+
+
+    <style>
+        .block
+        {
+            padding: 20px;
+        }
+
+        .hidden
+        {
+            display: none;
+        }
+
+        .days
+        {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+
+        #timeline
+        {
+
+        }
+    </style>
+
+
+    <script src="/assets/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/api.js"></script>
+    <script src="/assets/underscore.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+    <h3 class="title">Периоды</h3>
+    <div id="timeline" style="height: 500px; background-color: #ccc" class="mt-3"></div>
+
+
+    <div class="row">
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div id="new-block" class="block">
+        <h4>Новый период</h4>
+        <input type="text" class="form-control" name="start_date" id="start_date" placeholder="Start date">
+        <input type="text" class="form-control mt-1" name="end_date" id="end_date" placeholder="End date">
+        <input type="text" class="form-control mt-1" name="price" id="price" placeholder="Price">
+
+        <div class="days">
+            <span class="mr-3">
+                <label for="mon">Mon</label>
+                <input type="checkbox" class="day" name="mon" id="mon">
+            </span>
+
+            <span class="mr-3">
+                <label for="tue">Tue</label>
+                <input type="checkbox" class="day" name="tue" id="tue">
+            </span>
+
+            <span class="mr-3">
+                <label for="wed">Wed</label>
+                <input type="checkbox" class="day" name="wed" id="wed">
+            </span>
+
+            <span class="mr-3">
+                <label for="thu">Thu</label>
+                <input type="checkbox" class="day"  name="thu" id="thu">
+            </span>
+
+            <span class="mr-3">
+                <label for="fri">Fri</label>
+                <input type="checkbox" class="day" name="fri" id="fri">
+            </span>
+
+            <span class="mr-3">
+                <label for="sat">Sat</label>
+                <input type="checkbox" class="day" name="sat" id="sat">
+            </span>
+
+            <span class="mr-3">
+                <label for="sun">Sun</label>
+                <input type="checkbox" class="day" name="sun" id="sun">
+            </span>
+        </div>
+
+        <a href="javascript:void(0)" class="btn btn-primary" id="create-btn">Создать</a>
+
+    </div>
+
+    <div id="new-decline" class="alert-danger alert hidden"></div>
+
+    <div id="edit-block" class="block">
+
+        <h4>Изменить период</h4>
+
+            <input type="text" autocomplete="off" class="form-control" name="id" id="period_id" placeholder="Period id">
+            <a href="javascript:void(0)" class="mt-1 btn btn-primary" id="load-btn">Получить период</a>
+
+        <hr>
+
+        <input type="text" class="form-control mt-1" name="start_date" id="start_date2" placeholder="Start date">
+        <input type="text" class="form-control mt-1" name="end_date" id="end_date2" placeholder="End date">
+        <input type="text" class="form-control mt-1" name="price" id="price" placeholder="Price">
+
+
+        <div class="days">
+            <span class="mr-3">
+                <label for="mon">Mon</label>
+                <input type="checkbox" class="day" name="mon" id="mon">
+            </span>
+
+            <span class="mr-3">
+                <label for="tue">Tue</label>
+                <input type="checkbox" class="day" name="tue" id="tue">
+            </span>
+
+            <span class="mr-3">
+                <label for="wed">Wed</label>
+                <input type="checkbox" class="day" name="wed" id="wed">
+            </span>
+
+            <span class="mr-3">
+                <label for="thu">Thu</label>
+                <input type="checkbox" class="day" name="thu" id="thu">
+            </span>
+
+            <span class="mr-3">
+                <label for="fri">Fri</label>
+                <input type="checkbox" class="day" name="fri" id="fri">
+            </span>
+
+            <span class="mr-3">
+                <label for="sat">Sat</label>
+                <input type="checkbox" class="day" name="sat" id="sat">
+            </span>
+
+            <span class="mr-3">
+                <label for="sun">Sun</label>
+                <input type="checkbox" class="day" name="sun" id="sun">
+            </span>
+        </div>
+
+        <a href="javascript:void(0)" class="btn btn-primary" id="change-btn">Изменить</a>
+
+    </div>
+
+    <div id="edit-decline" class="alert-danger alert hidden"></div>
+
+
+    <div id="delete-block" class="block">
+
+        <h4>Удалить период</h4>
+
+
+        <form action="/api_1/delete" method="get">
+
+            <input type="text" autocomplete="off" class="form-control" name="id" id="id" placeholder="Period id">
+            <input type="submit" class="btn btn-primary mt-1" value="Удалить период">
+
+        </form>
+    </div>
+
+
+    <div class="mb-5 block">
+        <h4>Очистить все</h4>
+        <a href="/delete_all" class="btn btn-primary" id="change-btn">Удалить все</a>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    api = new app.services.api();
+
+    function newBlockService()
+    {
+        var $box = $('#new-block');
+
+        $('#start_date', $box).datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+        $('#end_date', $box).datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+
+        $('#create-btn', $box).click(function () {
+
+            var $decline = $('#new-decline');
+            $decline.addClass('hidden');
+
+
+            api.call('POST', 'new', {
+                start_date: $('#start_date', $box).val(),
+                end_date:   $('#end_date', $box).val(),
+                price:      $('#price', $box).val(),
+                days:       getDaysFromBlock($box)
+            }, {
+                done: function (prod) {
+
+                    if(prod.log.insert)
+                    {
+                        location.href = "/";
+                    }
+
+                    if(prod.log.decline)
+                    {
+                        var text = '<p>Код: <b>'+ prod.log.decline.code + '</b></p>'
+                                    + '<p>Сообщение: '+ prod.log.decline.message + '</p>'
+                            + '<p>Ид конфликтного периода: <b>'+ prod.log.decline.reason_period_id+'</b></p>';
+
+                        $decline.html(text)
+                            .removeClass('hidden');
+                    }
+
+                },
+
+                fail: function () {
+
+                }
+            });
+
+
+        });
+
+    }
+
+
+
+    function editBlockService()
+    {
+        var $box = $('#edit-block');
+        var $decline = $('#edit-decline');
+
+
+
+        $('#start_date2', $box).datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+        $('#end_date2', $box).datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+
+        $('#load-btn', $box).click(function(){
+
+
+            api.call('GET', 'period', {
+                id: $('#period_id', $box).val()
+            }, {
+                done: function (prod) {
+
+                    if(prod.period)
+                    {
+                        $('#price', $box).val(prod.period.price);
+                        $('#end_date2', $box).val(prod.period.end_date.split(' ')[0]);
+                        $('#start_date2', $box).val(prod.period.start_date.split(' ')[0]);
+
+
+                        $('#mon', $box).prop( "checked", prod.period.mon ? true : false );
+                        $('#tue', $box).prop( "checked", prod.period.tue ? true : false );
+                        $('#wed', $box).prop( "checked", prod.period.wed ? true : false );
+                        $('#thu', $box).prop( "checked", prod.period.thu ? true : false );
+                        $('#fri', $box).prop( "checked", prod.period.fri ? true : false );
+                        $('#sat', $box).prop( "checked", prod.period.sat ? true : false );
+                        $('#sun', $box).prop( "checked", prod.period.sun ? true : false );
+
+                    } else {
+
+                        $('#period_id', $box).val('')
+
+                    }
+
+                },
+
+                fail: function () {
+
+                }
+            });
+
+
+        });
+
+
+        $('#change-btn', $box).click(function(){
+
+            $decline.addClass('hidden');
+
+            api.call('POST', 'update', {
+                id:         $('#period_id', $box).val(),
+                start_date: $('#start_date2', $box).val(),
+                end_date:   $('#end_date2', $box).val(),
+                price:      $('#price', $box).val(),
+                days:       getDaysFromBlock($box)
+            }, {
+                done: function (prod) {
+
+                    if(prod.log.update)
+                    {
+                        location.href = "/";
+                    }
+
+                    if(prod.log.decline)
+                    {
+                        var text = '<p>Код: <b>'+ prod.log.decline.code + '</b></p>'
+                            + '<p>Сообщение: '+ prod.log.decline.message + '</p>'
+                            + '<p>Ид конфликтного периода: <b>'+ prod.log.decline.reason_period_id+'</b></p>';
+
+                        $decline.html(text)
+                            .removeClass('hidden');
+                    }
+
+                },
+
+                fail: function () {
+
+                }
+            });
+
+        });
+    }
+
+    function getDaysFromBlock($box)
+    {
+        var ret = [];
+        $('.day', $box).each(function (i, dom) {
+
+            ret.push($(dom).is(':checked') ? 1 : 0);
+
+        });
+
+        return ret;
+    }
+
+    $(document).ready(function () {
+
+        newBlockService();
+
+        editBlockService();
+
+    });
+
+
+</script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,674 @@
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-22 00:00:00",
+                "end_date": "2018-08-28 23:59:59",
+                "price": "69",
+                "mon": 1,
+                "tue": 1,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}{
+    "decline": {
+        "code": "crossing_outer_periods",
+        "message": "\u041a\u043e\u043d\u0444\u043b\u0438\u043a\u0442 \u0434\u043d\u0435\u0439 \u0441 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u043f\u0435\u0440\u0438\u043e\u0434\u043e\u043c, \u0441 \u0431\u043e\u043b\u044c\u0448\u0438\u043c\u0438 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u043c\u0438 \u0440\u0430\u043c\u043a\u0430\u043c\u0438",
+        "reason_period_id": "41",
+        "period_ids": [
+            "40",
+            "41"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": [
+        "42"
+    ]
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-22 00:00:00",
+                "end_date": "2018-08-29 23:59:59",
+                "price": "69",
+                "mon": 1,
+                "tue": 1,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [
+        "43"
+    ],
+    "action_type": "new"
+}
+{
+    "decline": {
+        "code": "fully_outer_period_exists",
+        "message": "\u0421\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 \u0442\u0430\u043a\u043e\u0439 \u0436\u0435 \u043f\u0435\u0440\u0438\u043e\u0434, \u0442\u043e\u043b\u044c\u043a\u043e \u0441 \u0431\u043e\u043b\u044c\u0448\u0438\u043c\u0438 \u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u043c\u0438 \u0440\u0430\u043c\u043a\u0430\u043c\u0438",
+        "reason_period_id": "42",
+        "period_ids": [
+            "40",
+            "41",
+            "42"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": {
+        "code": "crossing_start_date_periods",
+        "message": "\u041d\u0430\u0447\u0430\u043b\u043e \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b",
+        "reason_period_id": "42",
+        "period_ids": [
+            "40",
+            "41",
+            "42"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": {
+        "code": "crossing_start_date_periods",
+        "message": "\u041d\u0430\u0447\u0430\u043b\u043e \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b",
+        "reason_period_id": "41",
+        "period_ids": [
+            "40",
+            "41",
+            "42"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": {
+        "code": "crossing_start_date_periods",
+        "message": "\u041d\u0430\u0447\u0430\u043b\u043e \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b",
+        "reason_period_id": "40",
+        "period_ids": [
+            "40"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-21 00:00:00",
+                "end_date": "2018-08-29 23:59:59",
+                "price": "69",
+                "mon": 1,
+                "tue": 1,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [
+        "44"
+    ],
+    "merge_end_date": {
+        "end_date": {
+            "date": "2018-08-29 23:59:59.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Kiev"
+        }
+    },
+    "action_type": "new"
+}
+{
+    "decline": {
+        "code": "crossing_inner_periods",
+        "reason_period_id": "45",
+        "period_ids": [
+            "45"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": {
+        "code": "crossing_inner_periods",
+        "reason_period_id": "45",
+        "period_ids": [
+            "45"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-31 00:00:00",
+                "end_date": "2018-09-19 23:59:59",
+                "price": "69",
+                "mon": 1,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-15 00:00:00",
+                "end_date": "2018-08-20 23:59:59",
+                "price": "",
+                "mon": 0,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 1,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-15 00:00:00",
+                "end_date": "2018-08-25 23:59:59",
+                "price": "30",
+                "mon": 0,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 1,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": {
+        "code": "crossing_start_date_periods",
+        "message": "\u041d\u0430\u0447\u0430\u043b\u043e \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b",
+        "reason_period_id": "40",
+        "period_ids": [
+            "40"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-07-18 00:00:00",
+                "end_date": "2018-10-28 23:59:59",
+                "price": "600",
+                "mon": 0,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 1,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-11-01 00:00:00",
+                "end_date": "2018-11-01 23:59:59",
+                "price": "600",
+                "mon": 0,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 1,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-01 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "60",
+                "mon": 1,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-02 00:00:00",
+                "end_date": "2018-08-22 23:59:59",
+                "price": "80",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": {
+        "code": "crossing_start_date_periods",
+        "message": "\u041d\u0430\u0447\u0430\u043b\u043e \u043d\u043e\u0432\u043e\u0433\u043e \u043f\u0435\u0440\u0438\u043e\u0434\u0430 \u043f\u043e\u043f\u0430\u0434\u0430\u0435\u0442 \u0432 \u0443\u0436\u0435 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u0439 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b",
+        "reason_period_id": "52",
+        "period_ids": [
+            "52"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-22 00:00:00",
+                "end_date": "2018-08-31 23:59:59",
+                "price": "600",
+                "mon": 0,
+                "tue": 0,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": {
+        "code": "crossing_inner_periods",
+        "reason_period_id": "52",
+        "period_ids": [
+            "52"
+        ]
+    },
+    "current": [],
+    "merge": [],
+    "delete": []
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-01 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "600",
+                "mon": 1,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-16 00:00:00",
+                "end_date": "2018-08-29 23:59:59",
+                "price": "",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-03 00:00:00",
+                "end_date": "2018-08-22 23:59:59",
+                "price": "900",
+                "mon": 0,
+                "tue": 0,
+                "wed": 0,
+                "thu": 1,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-01 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "600",
+                "mon": 1,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-02 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-15 00:00:00",
+                "end_date": "2018-08-29 23:59:59",
+                "price": "600",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-01 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "700",
+                "mon": 1,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-22 00:00:00",
+                "end_date": "2018-08-31 23:59:59",
+                "price": "500",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-14 00:00:00",
+                "end_date": "2018-08-30 23:59:59",
+                "price": "",
+                "mon": 0,
+                "tue": 0,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-07 00:00:00",
+                "end_date": "2018-08-23 23:59:59",
+                "price": "400",
+                "mon": 0,
+                "tue": 0,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-01 00:00:00",
+                "end_date": "2018-08-15 23:59:59",
+                "price": "600",
+                "mon": 1,
+                "tue": 0,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-08 00:00:00",
+                "end_date": "2018-08-22 23:59:59",
+                "price": "300",
+                "mon": 0,
+                "tue": 1,
+                "wed": 0,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
+{
+    "decline": false,
+    "current": [
+        {
+            "period": {
+                "start_date": "2018-08-16 00:00:00",
+                "end_date": "2018-08-31 23:59:59",
+                "price": "200",
+                "mon": 0,
+                "tue": 0,
+                "wed": 1,
+                "thu": 0,
+                "fri": 0,
+                "sat": 0,
+                "sun": 0
+            }
+        }
+    ],
+    "merge": [],
+    "delete": [],
+    "action_type": "new"
+}
