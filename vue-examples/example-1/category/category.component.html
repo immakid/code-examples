@@ -1,0 +1,90 @@
+<section class="category">
+    <div class="form-group">
+        <label>Keywords:</label>
+        <input-tag :tags="internalKeywords"></input-tag>
+        <!-- hidden input required since input-tag has no name attribute -->
+        <input type="hidden" name="keywords" :value="internalKeywords.join(', ')" />
+        <br/>
+
+        <label class="">Add to keywords:</label>
+        <div class="form-inline">
+            <a href="javascript:void(0)" v-for="keyword in originalKeywords"
+               class="btn btn-default btn-xxs mr-3 mt-10" v-on:click="selectKeyword(keyword)">
+                {{ keyword }}
+            </a>
+        </div>
+
+        <div class="form-inline pull-left">
+            <button class="btn btn-info jb-btn jb-btn-default mt-10" v-on:click="saveKeywords()">Update keywords</button>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="row template-category-block">
+        <div class="col-md-12">
+            <h4 class="title">Categories</h4>
+            <div class="category-list">
+                <ol>
+                    <li
+                        v-for="category in categories"
+                        data-input-name="category_id"
+                        :data-item-has-motif="category.has_motif"
+                        :data-item-id="category.id"
+                        class="category-item selectable"
+                        :class="{ selected: (currentCategory && (category.id == currentCategory.id) && (isPostUsingMotif == category.has_motif)) }">
+
+                      <div class="category-name">
+                        {{category.full_name}}
+                        <span v-if="category.has_motif" class="category-has-motif"> - Motif</span>
+                      </div>
+                    </li>
+                </ol>
+                <input type="hidden" name="category_id" />
+                <input type="hidden" name="using_motif" />
+            </div>
+            <div class="form-inline template-category-btn">
+                <!-- <button class="btn btn-primary jb-btn jb-btn-ghost" v-on:click="getEbayCategories()">Motif Crowd</button>
+                <button class="btn btn-primary jb-btn jb-btn-ghost" v-on:click="getEbayCategories()">Motif in House</button>-->
+                <!-- submit to crowd button is temporary disabled. Currently it is disabled only for production. -->
+            </div>
+        </div>
+        <div class="col-md-12" v-if="templates.length > 0">
+            <h4 class="title">Items From our Database</h4>
+            <div class="template-list">
+                <div v-if="templates.length == 0" class="jb-box-empty">
+                    No items from our Database yet
+                </div>
+                <div v-for="template in templates" data-input-name="template_id" :data-item-id="template.id"
+                     class="template-card selectable">
+
+                    <img width="100px" v-if="getTemplateImage(template)" :src="getTemplateImage(template)" />
+
+                    <span v-else>{{ template.title }}</span>
+                </div>
+                <input type="hidden" name="template_id" />
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <div class="form-inline text-center col-md-4">
+            <button v-if="showSubmitToCrowd" type="button" v-on:click="submitForm('use-crowd')" class="btn btn-primary btn-ghost pull-left">Submit to Crowd</button>
+        </div>
+        <div class="form-inline text-center col-md-4">
+            <button type="button" v-on:click="applyPostTemplate()" class="btn btn-primary jb-btn jb-btn-primary">Use Post Template</button>
+        </div>
+        <div class="form-inline col-md-4">
+            <button type="button" v-on:click="submitForm('use-ebay')" class="btn btn-success pull-right">Submit in House</button>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div>
+        <div class="form-inline text-center col-md-4">
+            <button v-if="showSubmitToCrowd" type="button" v-on:click="submitForm('mturk-preview')" class="btn btn-primary btn-ghost pull-left">Crowd Preview</button>
+        </div>
+    </div>
+</section>

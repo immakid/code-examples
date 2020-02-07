@@ -1,0 +1,28 @@
+.catalog {
+    .match-info {
+        border: 1px solid #28a745;
+        padding: 10px 0px;
+        text-align: center;
+    }
+    .catalog-result {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 15px;
+        cursor: pointer;
+    }
+
+    .catalog-result .bold {
+        font-weight: bold;
+    }
+
+    .catalog-result.match {
+        border: 1px solid #28a745;
+    }
+    .disconnect-btn {
+        margin-top: 10px;
+        padding: 1px 5px !important;
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        border-radius: 3px !important;
+    }
+}

@@ -1,0 +1,66 @@
+<section class="catalog">
+  <div class="col-md-12">
+    <div class="form-group col-md-5">
+        <label>Search value:</label>
+        <input class="form-control" name="search-value" v-model="searchValue" />
+    </div>
+
+    <div class="form-group col-md-5">
+        <label>Search by:</label>
+        <select v-model="searchByModel" class="form-control">
+          <option value="Keywords">Keywords</option>
+          <option value="UPC">UPC</option>
+          <option value="MPN">MPN</option>
+          <option value="ISBN">ISBN</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <div class="form-inline pull-left">
+            <button :disabled="searchInProgress" class="btn btn-default jb-btn jb-btn-default" v-on:click="searchBy('keywords')">Search by {{searchByModel}}</button>
+        </div>
+    </div>
+  </div>
+
+    <br/>
+    <div class="clearfix"></div>
+    <br/>
+    <br/>
+    <div v-if="catalogId" class="col-md-offset-3 col-md-6 match-info success">
+        <span>This Post is connected with item <strong>#{{ catalogId }}</strong></span></br>
+        <button v-on:click="disconnect" class="btn btn-danger disconnect-btn">Disconnect</button>
+    </div>
+    <br/>
+    <br/>
+    <div class="clearfix"></div>
+    <div v-show="catalogItems.length > 0">
+      <hr/>
+
+      <div class="form-group">
+        <label>Results:</label>
+        <!-- hidden input required since input-tag has no name attribute -->
+
+        <div v-on:click="goToItemOnEbay($event, item)" class="catalog-result" :class="{ match: item.matchToCurrentPost }" v-for="item in catalogItems">
+            <div class="catalog-image col-md-3">
+                <img v-show="item.photo_url" :src="item.photo_url"/>
+                <span v-show="!item.photo_url">No Image</span>
+            </div>
+            <div class="catalog-title col-md-7">
+                {{ item.title }} <span :class="{ bold: item.matchToCurrentPost }">(#{{ item.product_id }})</span>
+            </div>
+            <div class="catalog-actions col-md-2">
+                <div class="col-md-12">
+                    <form method="post" :action="getSubmitUrlForItem(item)">
+                        <input name="_token" :value="csrfToken" type="hidden">
+                        <input name="title" type="hidden" :value="item.title"/>
+
+                        <input v-for="specific in item.item_specifics" :name="'item_specific['+specific.name+']'" :value="specific.value" type="hidden" />
+
+                        <button type="submit" class="btn btn-default jb-btn">Use it</button>
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+</section>

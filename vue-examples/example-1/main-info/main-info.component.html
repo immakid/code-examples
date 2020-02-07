@@ -1,0 +1,61 @@
+<section class="post-sections-main-info">
+    <!-- Title Field -->
+    <div class="form-group">
+        <div class="col-sm-12">
+            <label>Title:</label>
+        </div>
+        <div class="col-sm-12 mb-10">
+            <span v-show="showWarningAboutTitle" class="text-warning">The title doesn't match to the one generated automatically.</span>
+            <input type="text" ref="title_input" name="title" class="form-control" v-model="title" autocomplete="off">
+            <span :class="{'text-danger': isSubmitDisabled}">{{titleCharactersLeft}} characters left</span>
+        </div>
+
+        <div class="col-sm-12 mb-10">
+            <button v-if="hasTitleTemplate && metaOptions.length" type="button" class="btn btn-info" v-on:click="createTitleFromTitleTemplate()">
+                Apply Category Title Template
+            </button>
+            <button v-if="metaOptions.length" type="button" class="btn btn-info" v-on:click="generateTitle()">
+                Generate New Title
+            </button>
+        </div>
+        <div class="col-sm-12 meta-options-list" v-if="metaOptions.length">
+            <label>Add item specific to title:</label>
+            <div>
+                <button type="button"
+                        v-for="option in optionsForTitle"
+                        class="btn mr-3 btn-xxs"
+                        :class="getTileButtonClass((option.value ? option.value : option))"
+                        v-on:click="addValueToTitle((option.value ? option.value : option))">
+                    {{ (option.value ? option.value : option) }}
+                </button>
+            </div>
+            <div>
+                <a href="javascript:void(0)" v-for="keyword in originalKeywords"
+                   class="btn btn-xxs mr-3 mt-10" :class="getTileButtonClass(keyword)" v-on:click="addValueToTitle(keyword)">
+                    {{ keyword }}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Field -->
+    <div class="form-group col-sm-12 col-lg-12">
+        <label for="content" name="content">Description:</label>
+        <textarea
+                name="content"
+                id="content"
+                v-model="content"
+                class="form-control large-textarea"
+                rows="10">
+        </textarea>
+        <p v-show="isInhouseNotes" class="alert alert-info mt-10">
+            Please don't forget, that this post has in house notes!
+        </p>
+        <div class="description-buttons">
+            <button type="button" v-on:click="insertTitle()" class="btn btn-default">Insert title</button>
+            <button type="button" v-on:click="insertSellerNote()" class="btn btn-default">Insert seller's notes</button>
+            <button type="button" v-on:click="insertMetaData()" class="btn btn-default">Insert Meta data</button>
+        </div>
+    </div>
+
+</section>
